@@ -4,7 +4,7 @@ const User = require('../models/User');
 
 // Page d'enregistrement
 router.get('/register', (req, res) => {
-    res.render('home', { errors: req.flash('errors') });
+    res.render('register', { errors: req.flash('errors') });
 });
 
 router.post('/register', async (req, res) => {
