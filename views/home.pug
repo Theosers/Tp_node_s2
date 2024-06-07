@@ -1,0 +1,21 @@
+doctype html
+html
+    head
+        title Register
+        link(rel='stylesheet', href='/css/styles.css')
+    body
+        .container
+            h1 Register
+            if flash_message
+                p= flash_message
+            form(action='/register', method='POST')
+                input(type='text', name='firstName', placeholder='First Name')
+                input(type='text', name='lastName', placeholder='Last Name')
+                input(type='email', name='email', placeholder='Email')
+                input(type='password', name='password', placeholder='Password')
+                input(type='password', name='confirmPassword', placeholder='Confirm Password')
+                button(type='submit') Register
+            if errors
+                ul
+                    each error in errors
+                        li= error

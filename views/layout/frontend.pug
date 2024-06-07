@@ -1,0 +1,18 @@
+doctype html
+html
+    head
+        title Login
+        link(rel='stylesheet', href='/css/styles.css')
+    body
+        .container
+            h1 Login
+            if flash_message
+                p.flash-message.success= flash_message
+            form(action='/login', method='POST')
+                input(type='email', name='email', placeholder='Email')
+                input(type='password', name='password', placeholder='Password')
+                button(type='submit') Login
+            if errors
+                ul
+                    each error in errors
+                        li.flash-message.error= error
