@@ -6,7 +6,7 @@ html
     body
         .container
             h1 Login
-            if flash_message
+            if flash_message != ''
                 p.flash-message.success= flash_message
             form(action='/login', method='POST')
                 input(type='email', name='email', placeholder='Email')

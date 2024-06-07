@@ -6,8 +6,8 @@ html
     body
         .container
             h1 Register
-            if flash_message
-                p.flash-message.success= flash_message
+            
+            
             form(action='/register', method='POST')
                 input(type='text', name='firstName', placeholder='First Name')
                 input(type='text', name='lastName', placeholder='Last Name')
@@ -15,7 +15,7 @@ html
                 input(type='password', name='password', placeholder='Password')
                 input(type='password', name='confirmPassword', placeholder='Confirm Password')
                 button(type='submit') Register
-            if errors
+            if errors.length > 0
                 ul
                     each error in errors
                         li.flash-message.error= error
